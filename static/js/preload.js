@@ -67,7 +67,6 @@ function load_image(route, image) {
                 reader.onloadend = function() {
                     let base64data = reader.result;
                     let colorThief = new ColorThief();
-                    console.log(base64data)
                     PIXI.Texture.fromURL(base64data).then((texture) => {
                         let blur = PIXI.Texture.from(BlurImage(texture.baseTexture, 20));
                         for (let color of colorThief.getPalette(texture.baseTexture.resource.source, 10)) {
