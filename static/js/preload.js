@@ -100,12 +100,12 @@ window.onload = function() {
     if (meta == undefined || param.diff == undefined) {
         window.location = '/'
     }
-    level = meta[chart_difficulty_ranking_keys[param.diff]];
-    ranking = chart_difficulty_short_names[param.diff];
-    chart_name = meta[chart_difficulty_keys[param.diff]];
-    designer = meta[chart_desinger_keys[param.diff]];
-    audio = meta.musicFile;
-    illustration = meta.illustration
+    level_chart_info = meta.charts[param.diff]
+    ranking = level_chart_info.ranking;
+    chart_name = level_chart_info.chart;
+    designer = level_chart_info.chartDesigner;
+    audio = level_chart_info.musicFile;
+    illustration = level_chart_info.illustration
     chart0.info = {
         name: meta.name,
         level: ranking,
@@ -122,7 +122,10 @@ window.onload = function() {
                 setTimeout(wait, 100)
             } else {
                 gameInit()
-                setCanvasFullscreen(true)
+                while(fullscreen.type != 2){
+                    setCanvasFullscreen(true)
+                }
+                
             }
         }
         wait()

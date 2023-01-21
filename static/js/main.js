@@ -79,7 +79,7 @@ Loader.add([
         { name: 'holdEnd', url: '/static/img/HoldEnd.png' },
         { name: 'holdEndHl', url: '/static/img/HoldEndHL.png' },
         { name: 'judgeLine', url: '/static/img/JudgeLine.png' },
-        { name: 'clickRaw', url: '/static/img/clickRaw128.png' },
+        { name: 'clickRaw', url: '/static/img/clickRaw.png' },
 
         { name: 'songNameBar', url: '/static/img/SongsNameBar.png' },
         { name: 'progressBar', url: '/static/img/ProgressBar.png' },
@@ -608,8 +608,6 @@ function gameStart(waitTime = 1000) {
             textures.sound[name].play({ volume: 0 });
         }
     }
-
-    document.getElementById('game-btn-pause').innerHTML = '<i class="mdui-icon material-icons">&#xe034;</i> 暂停';
 }
 
 function setCanvasFullscreen(forceInDocumentFull = false) {
