@@ -1,6 +1,5 @@
 import os
 import json
-
 # get all directory names
 def get_dirs(path):
     dirs = []

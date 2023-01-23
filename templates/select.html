@@ -6,15 +6,30 @@
     <title>Ph1gr0s Emulator - Select Songs</title>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="/static/js/mdui.min.js"></script>
+    <script src="/static/js/datamanager.js"></script>
     <script src="/static/js/songselect.js"></script>
     <link rel="stylesheet" href="/static/css/mdui.min.css?v=1.0.1" />
 
 </head>
 
 <body>
-    <ol></ol>
-    <div id="song-list" class="mdui-container">
+    <div id="control" class="mdui-container">
+        <h3>Control</h3>
+        <h4>autoplay</h4>
+        <label class="mdui-checkbox">
+            <input type="checkbox" id="auto">
+            <i class="mdui-checkbox-icon"></i>
+            enable auto play
+        </label>
+        <h4>offset</h4>
+        <label class="mdui-slider mdui-slider-discrete">
+            <input type="range" step="1" min="-500" max="500" id="offset"/>
+        </label>
+    </div>
+    <div class="mdui-divider"></div>
 
+    <div id="song-list" class="mdui-container">
+        <h3>Select a song</h3>
     </div>
 </body>
 

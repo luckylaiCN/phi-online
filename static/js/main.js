@@ -2,6 +2,7 @@
 
 var pixi = null; // 备用
 var Loader = new PIXI.Loader(); // Pixi.js 自带的资源加载器
+var LoaderCompleted = false
 
 // 精灵和贴图信息
 var sprites = {};
@@ -48,6 +49,8 @@ const judgementTimes = {
     goodChallenge: 75,
     perfectChallenge: 40
 };
+
+
 
 
 // ========此处声明监听器=========
@@ -828,3 +831,5 @@ function gameDestroy() {
 
     });
 }
+
+Loader.onComplete.add(() => {LoaderCompleted = true})

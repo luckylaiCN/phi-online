@@ -12,7 +12,7 @@ function produce_mdui_panel(imageUrl, title, actions) {
 function produce_mdui_card_actions(rankings) {
     result = ''
     rankings.forEach(element => {
-        result += `<a class="mdui-btn" href="/play?${element.url}">${element.description}</a>`
+        result += `<a class="mdui-btn" target="_blank" href="/play?${element.url}">${element.description}</a>`
     });
     return result;
 }
@@ -23,7 +23,7 @@ function get_meta(url) {
         url: url,
         dataType: 'json',
         async: false,
-        success: function(data) {
+        success: function (data) {
             meta = data;
         }
     })
@@ -31,7 +31,7 @@ function get_meta(url) {
 }
 
 function json2uri(json) {
-    return Object.keys(json).map(function(key) {
+    return Object.keys(json).map(function (key) {
         return [key, json[key]].map(encodeURIComponent).join("=");
     }).join("&");
 }
@@ -46,13 +46,13 @@ function display_songs(routes) {
         rankings = [];
         for (var i = 0; i < charts.length; i++) {
             rankings.push({
-                description: `LV. ${charts[i].ranking}`,
+                description: charts[i].ranking,
                 url: json2uri({
                     "route": element,
                     "diff": i
                 })
             });
-            
+
         }
         actions = produce_mdui_card_actions(rankings);
         card = produce_mdui_panel(illustration_url, title, actions);
@@ -60,15 +60,25 @@ function display_songs(routes) {
     });
 }
 
-window.onload = function() {
+window.onload = function () {
     song_list_url = '/getsongs';
     song_list_json = null;
     song_list_json_loaded = false;
+    $("#auto")[0].checked = phi_data.auto
+    $("#auto")[0].onchange = function (event) {
+        phi_data.auto = event.target.checked
+        update_data()
+    }
+    $("#offset")[0].value = phi_data.offset
+    $("#offset")[0].onchange = function (event) {
+        phi_data.offset = parseInt(event.target.value)
+        update_data()
+    }
     $.ajax({
         url: song_list_url,
         dataType: 'json',
         async: false,
-        success: function(data) {
+        success: function (data) {
             song_list_json = data;
             song_list_json_loaded = true;
             routes = data.routes
@@ -76,4 +86,5 @@ window.onload = function() {
         }
     })
     mdui.mutation();
+    mdui.updateSliders();
 }

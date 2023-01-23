@@ -54,40 +54,28 @@ function load_audio(route, audio) {
     chart0.audio = audio_data
 }
 
-function load_image(route, image) {
-    return new Promise(function(resolve, _) {
-        let xhr = new XMLHttpRequest();
-        xhr.open('GET', `/charts/${route}/${image}`, true);
-        xhr.responseType = 'blob';
-        xhr.onload = function(e) {
-            if (this.status == 200) {
-                let myBlob = this.response;
-                let reader = new FileReader();
-                reader.readAsDataURL(myBlob);
-                reader.onloadend = function() {
-                    let base64data = reader.result;
-                    let colorThief = new ColorThief();
-                    PIXI.Texture.fromURL(base64data).then((texture) => {
-                        let blur = PIXI.Texture.from(BlurImage(texture.baseTexture, 20));
-                        for (let color of colorThief.getPalette(texture.baseTexture.resource.source, 10)) {
-                            if (color[0] * 0.299 + color[1] * 0.587 + color[2] * 0.114 < 192) {
-                                textures.baseColor = blur.baseColor = Number('0x' + color[0].toString(16) + color[1].toString(16) + color[2].toString(16));
-                                break;
-                            }
-                        }
-                        if (!texture.baseColor) {
-                            texture.baseColor = colorThief.getColor(texture.baseTexture.resource.source);
-                            texture.baseColor = blur.baseColor = Number('0x' + texture.baseColor[0].toString(16) + texture.baseColor[1].toString(16) + texture.baseColor[2].toString(16));
-                        }
-                        chart0.image = texture
-                        chart0.imageBlur = blur
-                        resolve()
-                    })
+function load_image_new(route, image){
+    return new Promise((resolve,_)=>{
+        let colorThief = new ColorThief();
+        PIXI.Texture.fromURL(`/charts/${route}/${image}`).then((texture) => {
+            let blur = PIXI.Texture.from(BlurImage(texture.baseTexture, 20));
+            for (let color of colorThief.getPalette(texture.baseTexture.resource.source, 10)) {
+                if (color[0] * 0.299 + color[1] * 0.587 + color[2] * 0.114 < 192) {
+                    textures.baseColor = blur.baseColor = Number('0x' + color[0].toString(16) + color[1].toString(16) + color[2].toString(16));
+                    break;
                 }
             }
-        }
-        xhr.send();
+            if (!texture.baseColor) {
+                texture.baseColor = colorThief.getColor(texture.baseTexture.resource.source);
+                texture.baseColor = blur.baseColor = Number('0x' + texture.baseColor[0].toString(16) + texture.baseColor[1].toString(16) + texture.baseColor[2].toString(16));
+            }
+            chart0.image = texture
+            chart0.imageBlur = blur
+            console.log(texture)
+            resolve()
+        })
     })
+    
 }
 
 
@@ -108,16 +96,32 @@ window.onload = function() {
     chart0.info = {
         name: meta.name,
         level: ranking,
-        illustrator: meta.illustrator,
+        illustrator: level_chart_info.illustrator,
         designer: designer,
     }
     load_chart(param.route, chart_name)
     load_audio(param.route, audio)
-    load_image(param.route, illustration).then(() => {
-        window._chart = chart0
+    // load_image(param.route, illustration).then(() => {
+    //     window._chart = chart0
 
+    //     function wait() {
+    //         if (!chart0.audio.isLoaded) {
+    //             setTimeout(wait, 100)
+    //         } else {
+    //             gameInit()
+    //             while(fullscreen.type != 2){
+    //                 setCanvasFullscreen(true)
+    //             }
+                
+    //         }
+    //     }
+    //     wait()
+    // })
+    load_image_new(param.route,illustration).then(()=>{
+        console.log(chart0.image,chart0.imageBlur)
+        window._chart = chart0
         function wait() {
-            if (!chart0.audio.isLoaded) {
+            if (!(chart0.audio.isLoaded && LoaderCompleted)) {
                 setTimeout(wait, 100)
             } else {
                 gameInit()
@@ -129,6 +133,7 @@ window.onload = function() {
         }
         wait()
     })
+    
 
 
 }
