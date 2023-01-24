@@ -1,0 +1,283 @@
+{
+    "routes": [
+        "1F",
+        "allTheTime",
+        "Anomaly",
+        "Avant Raze",
+        "Bloody Marquis",
+        "Brain Power",
+        "Cryonix",
+        "Dead_Soul_SP",
+        "Destination",
+        "Dice 20",
+        "GOODMEN",
+        "grievousLady",
+        "Hemisphere",
+        "Hemisphere AT",
+        "materializeAnything",
+        "ouroVoros",
+        "Phoebus AT",
+        "Rubbish_Sorting_SP",
+        "Sakura Fubuki",
+        "Sigma.AprilFools.0",
+        "Sigma.AprilFools.1",
+        "sample",
+        "Starlight",
+        "Stasis",
+        "samplePec",
+        "terrasphere",
+        "theRailway",
+        "TroY",
+        "TSLove",
+        "UИ0HЯ1Λ-Seventh Syberia Strike",
+        "Wavetapper_SP",
+        "WE ARE HARDCORE",
+        "What's up pop - modified",
+        "Winter_Cube_SP"
+    ],
+    "meta": {
+        "1F": {
+            "tag": "0.0.1",
+            "chartRankings": [
+                "IN Lv.13"
+            ],
+            "name": "1F"
+        },
+        "allTheTime": {
+            "tag": "0.0.1",
+            "chartRankings": [
+                13
+            ],
+            "name": "All The Time"
+        },
+        "Anomaly": {
+            "tag": "0.0.1",
+            "chartRankings": [
+                7,
+                7,
+                14
+            ],
+            "name": "Anomaly"
+        },
+        "Avant Raze": {
+            "tag": "0.0.1",
+            "chartRankings": [
+                "IN Lv.15"
+            ],
+            "name": "Avant Raze"
+        },
+        "Bloody Marquis": {
+            "tag": "0.0.1",
+            "chartRankings": [
+                "IN Lv.15"
+            ],
+            "name": "Bloody Marquis"
+        },
+        "Brain Power": {
+            "tag": "0.0.1",
+            "chartRankings": [
+                "IN Lv.14"
+            ],
+            "name": "Brain Power"
+        },
+        "Cryonix": {
+            "tag": "0.0.1",
+            "chartRankings": [
+                "IN Lv.15"
+            ],
+            "name": "Cryonix"
+        },
+        "Dead_Soul_SP": {
+            "tag": "0.0.1",
+            "chartRankings": [
+                -1
+            ],
+            "name": "Dead Soul SP"
+        },
+        "Destination": {
+            "tag": "0.0.1",
+            "chartRankings": [
+                3,
+                9,
+                13,
+                15
+            ],
+            "name": "Destination"
+        },
+        "Dice 20": {
+            "tag": "0.0.1",
+            "chartRankings": [
+                "IN Lv.14"
+            ],
+            "name": "Dice 20"
+        },
+        "GOODMEN": {
+            "tag": "0.0.1",
+            "chartRankings": [
+                "IN Lv.14"
+            ],
+            "name": "GOODMEN"
+        },
+        "grievousLady": {
+            "tag": "0.0.1",
+            "chartRankings": [
+                15
+            ],
+            "name": "Grievous Lady"
+        },
+        "Hemisphere": {
+            "tag": "0.0.1",
+            "chartRankings": [
+                "IN Lv.14"
+            ],
+            "name": "Hemisphere"
+        },
+        "Hemisphere AT": {
+            "tag": "0.0.1",
+            "chartRankings": [
+                "AT Lv.16"
+            ],
+            "name": "Hemisphere"
+        },
+        "materializeAnything": {
+            "tag": "0.0.1",
+            "chartRankings": [
+                15
+            ],
+            "name": "Materialize Anything"
+        },
+        "ouroVoros": {
+            "tag": "0.0.1",
+            "chartRankings": [
+                15
+            ],
+            "name": "ouroVoros"
+        },
+        "Phoebus AT": {
+            "tag": "0.0.1",
+            "chartRankings": [
+                "AT Lv.15"
+            ],
+            "name": "Phoebus"
+        },
+        "Rubbish_Sorting_SP": {
+            "tag": "0.0.1",
+            "chartRankings": [
+                -1
+            ],
+            "name": "Rubbish Sorting SP"
+        },
+        "Sakura Fubuki": {
+            "tag": "0.0.1",
+            "chartRankings": [
+                "IN Lv.14"
+            ],
+            "name": "Sakura Fubuki"
+        },
+        "Sigma.AprilFools.0": {
+            "tag": "0.0.1",
+            "chartRankings": [
+                "-1"
+            ],
+            "name": "Sigma(AprilFools 0)"
+        },
+        "Sigma.AprilFools.1": {
+            "tag": "0.0.1",
+            "chartRankings": [
+                -1
+            ],
+            "name": "Sigma(AprilFools 1)"
+        },
+        "sample": {
+            "tag": "0.0.1",
+            "chartRankings": [
+                -1
+            ],
+            "name": "Spasmodic(Haocore Mix)(JSON File Sample Chart)"
+        },
+        "Starlight": {
+            "tag": "0.0.1",
+            "chartRankings": [
+                "IN Lv.12"
+            ],
+            "name": "Starlight(KIVA Remix)"
+        },
+        "Stasis": {
+            "tag": "0.0.1",
+            "chartRankings": [
+                "IN Lv.15"
+            ],
+            "name": "Stasis"
+        },
+        "samplePec": {
+            "tag": "0.0.1",
+            "chartRankings": [
+                16
+            ],
+            "name": "Tempestissimo(PEC File sample chart)"
+        },
+        "terrasphere": {
+            "tag": "0.0.1",
+            "chartRankings": [
+                15
+            ],
+            "name": "Terrasphere"
+        },
+        "theRailway": {
+            "tag": "0.0.1",
+            "chartRankings": [
+                13
+            ],
+            "name": "The Railway"
+        },
+        "TroY": {
+            "tag": "0.0.1",
+            "chartRankings": [
+                "IN Lv.15"
+            ],
+            "name": "TroY"
+        },
+        "TSLove": {
+            "tag": "0.0.1",
+            "chartRankings": [
+                14
+            ],
+            "name": "TSLove"
+        },
+        "UИ0HЯ1Λ-Seventh Syberia Strike": {
+            "tag": "0.0.1",
+            "chartRankings": [
+                "IN Lv.14"
+            ],
+            "name": "UИ0HЯ1Λ-Seventh Syberia Strike"
+        },
+        "Wavetapper_SP": {
+            "tag": "0.0.1",
+            "chartRankings": [
+                -1
+            ],
+            "name": "Wavetapper SP"
+        },
+        "WE ARE HARDCORE": {
+            "tag": "0.0.1",
+            "chartRankings": [
+                "IN Lv.15"
+            ],
+            "name": "WE ARE HARDCORE"
+        },
+        "What's up pop - modified": {
+            "tag": "0.0.1",
+            "chartRankings": [
+                "IN Lv.15"
+            ],
+            "name": "What's up?Pop!"
+        },
+        "Winter_Cube_SP": {
+            "tag": "0.0.1",
+            "chartRankings": [
+                13
+            ],
+            "name": "Winter Cube SP"
+        }
+    }
+}
