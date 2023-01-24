@@ -10,8 +10,16 @@ def get_dirs(path):
 
 def get_song_list_json():
     routes = get_dirs("./charts")
+    routes.sort()
     output_json = {
         "routes": routes
     }
     return json.dumps(output_json)
 
+ENVIRONMENT = os.environ.get("prodenv")
+
+if ENVIRONMENT != "development":
+    ENVIRONMENT = "production"
+
+else :
+    print("Run in development env")

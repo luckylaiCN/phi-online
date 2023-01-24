@@ -1,3 +1,4 @@
+const CHART_HOST = ""
 LOCAL_STORAGE_NAME = "phi-online"
 
 let data_default = {

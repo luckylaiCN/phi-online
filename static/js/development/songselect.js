@@ -1,4 +1,4 @@
-function produce_mdui_panel(imageUrl, title, actions) {
+function produce_mdui_panel(title, actions) {
     return `<div class="mdui-panel mdui-panel-gapless" mdui-panel>
             <div class="mdui-panel-item">
             <div class="mdui-panel-item-header">${title}</div>
@@ -12,7 +12,7 @@ function produce_mdui_panel(imageUrl, title, actions) {
 function produce_mdui_card_actions(rankings) {
     result = ''
     rankings.forEach(element => {
-        result += `<a class="mdui-btn" target="_blank" href="/play?${element.url}">${element.description}</a>`
+        result += `<a class="mdui-btn" target="_blank" href="/play?${element.uri_component}">${element.description}</a>`
     });
     return result;
 }
@@ -36,32 +36,31 @@ function json2uri(json) {
     }).join("&");
 }
 
-function display_songs(routes) {
-    routes.forEach(element => {
-        meta = get_meta(`/charts/${element}/meta.json`);
-        charts = meta.charts
-        illustration = charts[0].illustration;
-        illustration_url = `/charts/${element}/${illustration}`;
-        title = meta.name;
-        rankings = [];
-        for (var i = 0; i < charts.length; i++) {
+function display_songs(song_list_json) {
+    routes = song_list_json.routes
+    routes.forEach(route => {
+        meta = song_list_json.meta[route]
+        tag = meta.tag
+        title = meta.name
+        rankings = []
+        for (var i = 0 ; i < meta.chartRankings.length ; i++){
             rankings.push({
-                description: charts[i].ranking,
-                url: json2uri({
-                    "route": element,
-                    "diff": i
+                description: meta.chartRankings[i],
+                uri_component: json2uri({
+                    "route" : route,
+                    "diff" : i,
+                    "tag" : tag
                 })
-            });
-
+            })
         }
         actions = produce_mdui_card_actions(rankings);
-        card = produce_mdui_panel(illustration_url, title, actions);
+        card = produce_mdui_panel(title, actions);
         $('#song-list').append(card);
-    });
+    })
 }
 
 window.onload = function () {
-    song_list_url = '/getsongs';
+    song_list_url = `${CHART_HOST}/charts/songlist.json`;
     song_list_json = null;
     song_list_json_loaded = false;
     $("#auto")[0].checked = phi_data.auto
@@ -81,8 +80,7 @@ window.onload = function () {
         success: function (data) {
             song_list_json = data;
             song_list_json_loaded = true;
-            routes = data.routes
-            display_songs(routes);
+            display_songs(song_list_json);
         }
     })
     mdui.mutation();

@@ -3,3 +3,6 @@ env
 fix.py
 *.zip
 csvimport
+__pycache__
+charts/*
+!songlist.json
