@@ -3,36 +3,36 @@
         "1F",
         "allTheTime",
         "Anomaly",
-        "Avant Raze",
+        "AvantRaze",
         "Bloody Marquis",
-        "Brain Power",
+        "BrainPower",
         "Cryonix",
         "Dead_Soul_SP",
         "Destination",
-        "Dice 20",
+        "Dice.20",
         "GOODMEN",
         "grievousLady",
         "Hemisphere",
-        "Hemisphere AT",
+        "Hemisphere.AT",
         "materializeAnything",
+        "name1",
         "ouroVoros",
-        "Phoebus AT",
+        "PhoebusAT",
         "Rubbish_Sorting_SP",
-        "Sakura Fubuki",
+        "Sakura.Fubuki",
         "Sigma.AprilFools.0",
         "Sigma.AprilFools.1",
-        "sample",
+        "SpasmodicSP",
         "Starlight",
         "Stasis",
-        "samplePec",
+        "Tempestissimo",
         "terrasphere",
         "theRailway",
         "TroY",
         "TSLove",
-        "UИ0HЯ1Λ-Seventh Syberia Strike",
         "Wavetapper_SP",
-        "WE ARE HARDCORE",
-        "What's up pop - modified",
+        "WE.ARE.HARDCORE",
+        "What's.up.pop",
         "Winter_Cube_SP"
     ],
     "meta": {
@@ -59,8 +59,8 @@
             ],
             "name": "Anomaly"
         },
-        "Avant Raze": {
-            "tag": "0.0.1",
+        "AvantRaze": {
+            "tag": "0.0.2",
             "chartRankings": [
                 "IN Lv.15"
             ],
@@ -73,8 +73,8 @@
             ],
             "name": "Bloody Marquis"
         },
-        "Brain Power": {
-            "tag": "0.0.1",
+        "BrainPower": {
+            "tag": "0.0.2",
             "chartRankings": [
                 "IN Lv.14"
             ],
@@ -104,8 +104,8 @@
             ],
             "name": "Destination"
         },
-        "Dice 20": {
-            "tag": "0.0.1",
+        "Dice.20": {
+            "tag": "0.0.2",
             "chartRankings": [
                 "IN Lv.14"
             ],
@@ -132,8 +132,8 @@
             ],
             "name": "Hemisphere"
         },
-        "Hemisphere AT": {
-            "tag": "0.0.1",
+        "Hemisphere.AT": {
+            "tag": "0.0.2",
             "chartRankings": [
                 "AT Lv.16"
             ],
@@ -146,6 +146,13 @@
             ],
             "name": "Materialize Anything"
         },
+        "name1": {
+            "tag": "0.0.2",
+            "chartRankings": [
+                "IN Lv.14"
+            ],
+            "name": "UИ0HЯ1Λ-Seventh Syberia Strike"
+        },
         "ouroVoros": {
             "tag": "0.0.1",
             "chartRankings": [
@@ -153,8 +160,8 @@
             ],
             "name": "ouroVoros"
         },
-        "Phoebus AT": {
-            "tag": "0.0.1",
+        "PhoebusAT": {
+            "tag": "0.0.2",
             "chartRankings": [
                 "AT Lv.15"
             ],
@@ -167,8 +174,8 @@
             ],
             "name": "Rubbish Sorting SP"
         },
-        "Sakura Fubuki": {
-            "tag": "0.0.1",
+        "Sakura.Fubuki": {
+            "tag": "0.0.2",
             "chartRankings": [
                 "IN Lv.14"
             ],
@@ -188,8 +195,8 @@
             ],
             "name": "Sigma(AprilFools 1)"
         },
-        "sample": {
-            "tag": "0.0.1",
+        "SpasmodicSP": {
+            "tag": "0.0.2",
             "chartRankings": [
                 -1
             ],
@@ -209,8 +216,8 @@
             ],
             "name": "Stasis"
         },
-        "samplePec": {
-            "tag": "0.0.1",
+        "Tempestissimo": {
+            "tag": "0.0.2",
             "chartRankings": [
                 16
             ],
@@ -244,13 +251,6 @@
             ],
             "name": "TSLove"
         },
-        "UИ0HЯ1Λ-Seventh Syberia Strike": {
-            "tag": "0.0.1",
-            "chartRankings": [
-                "IN Lv.14"
-            ],
-            "name": "UИ0HЯ1Λ-Seventh Syberia Strike"
-        },
         "Wavetapper_SP": {
             "tag": "0.0.1",
             "chartRankings": [
@@ -258,15 +258,15 @@
             ],
             "name": "Wavetapper SP"
         },
-        "WE ARE HARDCORE": {
-            "tag": "0.0.1",
+        "WE.ARE.HARDCORE": {
+            "tag": "0.0.2",
             "chartRankings": [
                 "IN Lv.15"
             ],
             "name": "WE ARE HARDCORE"
         },
-        "What's up pop - modified": {
-            "tag": "0.0.1",
+        "What's.up.pop": {
+            "tag": "0.0.2",
             "chartRankings": [
                 "IN Lv.15"
             ],
