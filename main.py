@@ -2,7 +2,7 @@ from flask import Flask,render_template,send_file,make_response
 from src import utils
 import os
 import requests
-import io
+from datetime import timedelta
 
 ROOT_DIC = os.path.dirname(os.path.abspath(__file__))
 print(ROOT_DIC)
@@ -21,16 +21,16 @@ def index(): # selection page
 def songasset(songname,file):
     return make_cache_response(send_file(os.path.join(ROOT_DIC,f"charts/{songname}/{file}")))
 
-@app.route("/charts_online/<tag>/<codename>")
-def songzip(tag,codename):
+@app.route("/charts_online/<tag>/<codename_zip>")
+def songzip(tag,codename_zip):
     if utils.ENVIRONMENT == "development":
-        response = make_response(send_file(os.path.join(ROOT_DIC,f"charts/{codename}.zip")))
+        response = make_response(send_file(os.path.join(ROOT_DIC,f"charts/{codename_zip}")))
     else:
-        url = f"https://github.com/luckylaiCN/phi-online/releases/download/{tag}/{codename}.zip"
+        url = f"https://github.com/luckylaiCN/phi-online/releases/download/{tag}/{codename_zip}"
         zipfile_binary = requests.get(url).content
         response = make_response()
         response.data = zipfile_binary
-    response.headers['Content-Disposition'] = f'attachment; filename={codename}.zip'
+    response.headers['Content-Disposition'] = f'attachment; filename={codename_zip}.zip'
     response.headers["Cache-Control"] = "public, max-age=86400"
     response.headers["responseType"] = "arrayBuffer"
     response.mimetype = "application/octet-stream"
@@ -39,12 +39,15 @@ def songzip(tag,codename):
 
 @app.route("/charts/songlist.json")
 def chartasset():
-    return send_file(os.path.join(ROOT_DIC,f"charts/songlist.json"))
+    return send_file(os.path.join(ROOT_DIC,"charts/songlist.json"))
 
 @app.route("/play")
 def play():
     return render_template("play.html",environment = utils.ENVIRONMENT)
 
+if utils.ENVIRONMENT == "production":
+    # set cache
+    app.config["SEND_FILE_MAX_AGE_DEFAULT"] = timedelta(days=7)
 
 if __name__ == '__main__':
-    app.run(debug=True, port=os.getenv("PORT", default=5000))
+    app.run(debug=(utils.ENVIRONMENT == "development"), port=os.getenv("PORT", default=5000 if utils.ENVIRONMENT == "development" else 80))

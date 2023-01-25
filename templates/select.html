@@ -13,24 +13,78 @@
 </head>
 
 <body>
-    <div id="control" class="mdui-container">
-        <h3>Control</h3>
-        <h4>autoplay</h4>
-        <label class="mdui-checkbox">
-            <input type="checkbox" id="auto">
-            <i class="mdui-checkbox-icon"></i>
-            enable auto play
-        </label>
-        <h4>offset</h4>
-        <label class="mdui-slider mdui-slider-discrete">
-            <input type="range" step="1" min="-500" max="500" id="offset"/>
-        </label>
-    </div>
-    <div class="mdui-divider"></div>
+    <div class="mdui-toolbar mdui-color-blue-accent">
+        
+        <span class="mdui-typo-title">Ph1gr0s Emulator</span>
 
-    <div id="song-list" class="mdui-container">
-        <h3>Select a song</h3>
-    </div>
+      </div>
+    <div class="mdui-container">
+
+        <div class="mdui-panel" mdui-panel="{accordion: true}" >
+            <div class="mdui-panel-item">
+                <div class="mdui-panel-item-header" id="control">Control</div>
+                <div class="mdui-panel-item-body">
+                    <div class="mdui-row">
+                        <div class="mdui-col-xs-3"><label class="mdui-checkbox">
+                                <input type="checkbox" id="auto">
+                                <i class="mdui-checkbox-icon"></i>
+                                autoplay
+                            </label></div>
+                        <div class="mdui-col-xs-3"><label class="mdui-checkbox">
+                                <input type="checkbox" id="challenge">
+                                <i class="mdui-checkbox-icon"></i>
+                                challenge mode
+                            </label></div>
+                    </div>
+
+                    <div class="mdui-row">
+                        <div class="mdui-col-xs-5">
+                            <h4>music volume</h4>
+                            <label class="mdui-slider mdui-slider-discrete">
+                                <input type="range" step="0.01" min="0" max="1" id="music-volume" />
+                            </label>
+                        </div>
+                        <div class="mdui-col-xs-5 mdui-col-offset-xs-1">
+                            <h4>hitsound volume</h4>
+                            <label class="mdui-slider mdui-slider-discrete">
+                                <input type="range" step="0.01" min="0" max="1" id="hitsound-volume" />
+                            </label>
+                        </div>
+
+                    </div>
+
+                    <div class="mdui-row">
+                        <div class="mdui-col-xs-5">
+                            <h4>offset</h4>
+                            <label class="mdui-slider mdui-slider-discrete">
+                                <input type="range" step="1" min="-500" max="500" id="offset" />
+                            </label>
+                        </div>
+                        <div class="mdui-col-xs-5 mdui-col-offset-xs-1">
+                            <h4>note scale</h4>
+                            <label class="mdui-slider mdui-slider-discrete">
+                                <input type="range" step="0.05" min="0.8" max="1.5" id="note-scale" />
+                            </label>
+                        </div>
+                    </div>
+                    <div class="mdui-row">
+                        <h4>chart mirror selection</h4>
+                        <select class="mdui-select" id="chart-host" ></select>
+                    </div>
+
+                    <div class="mdui-row">
+                        <h4>Reset all settings</h4>
+                        <a id="reset" class="mdui-btn">Reset all</a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="mdui-panel-item mdui-panel-item-open">
+                <div class="mdui-panel-item-header">Select a song to play</div>
+                <div id="song-list" class="mdui-panel-item-body">
+                </div>
+            </div>
+        </div>
 </body>
 
 </html>

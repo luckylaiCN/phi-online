@@ -58,7 +58,7 @@
             backgroundBlur: true, // 背景图模糊
             clickAnimate: true, // 打击动画
             accIndicator: false, // 准度指示器
-            showFinger: true, // 手指触摸点
+            showFinger: false, // 手指触摸点
             noteScale: 8e3, // 按键缩放
             accIndicatorScale: 500, // 准度指示器缩放
             multiNotesHighlight: true, // 多押高亮
@@ -104,6 +104,10 @@
             settings.autoPlay = true;
         }
         settings.chartDelay = phi_data.offset / 1000
+        settings.noteScale = 8e3 / phi_data.noteScale
+        settings.challengeMode = phi_data.challenge
+        settings.hitsoundVolume = phi_data.hitsoundVolume
+        settings.musicVolume = phi_data.musicVolume
     </script>
     <script src="/static/js/class.js?v=0.1.2"></script>
     <script src="/static/js/convert.js?v=0.1.1"></script>
@@ -137,25 +141,18 @@
 
 <body>
     <div id="game-canvas-box" style="margin:auto">
-        <div class="mdui-text-color-theme-disabled" style="font-family:'Mina'">
+        <div class="mdui-container">
+            <h2>谱面正在赶来的路上</h2>
+            <h3 id="load-status"></h3>
+            <div class="mdui-progress">
+                <div class="mdui-progress-indeterminate"></div>
+            </div>
         </div>
+
     </div>
 
     <div class="mdui-m-t-1 mdui-m-b-1" id="develop-judgements-count" style="margin:auto"></div>
 
-    <script>
-        document.getElementById('game-canvas-box').innerHTML =
-            '<div class="mdui-text-color-theme-disabled" style="font-family:\'Mina\'">' +
-            '============== 设备信息 ==============<br>' +
-            '设备类型：' + DeviceInfo.systemType + '<br>' +
-            '设备系统：' + DeviceInfo.system + ' ' + DeviceInfo.systemVersion + '<br>' +
-            '当前浏览器：' + DeviceInfo.browser + ' ' + DeviceInfo.browserVersion + '<br>' +
-            '浏览器内核：' + DeviceInfo.browserEngine + '<br>' +
-            '是否支持 WebGL：' + (DeviceInfo.supportWebGL ? '是' : '否') + '<br>' +
-            '=========== 等待加载资源文件 ===========' +
-            '</div>';
-    </script>
-    
     <script src="/static/js/{{environment}}/main.js"></script>
     <script src="/static/js/{{environment}}/preload.js"></script>
 </body>

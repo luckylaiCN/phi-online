@@ -48,6 +48,14 @@ def remove_tag(dir):
             json_obj.pop("tag")
             with open(meta_path,"w",encoding="utf-8") as f:
                 json.dump(json_obj,f,ensure_ascii=False,indent=4)
+
+def zip_all(dir):
+    zip_path = os.path.join(CHART_ROOT,f"{dir}.zip")
+    with zipfile.ZipFile(zip_path,"w") as f:
+        # zip all 
+        for root,dirs,files in os.walk(os.path.join(CHART_ROOT,dir)):
+            for file in files:
+                f.write(os.path.join(root,file),file)
     
 
 if __name__ == "__main__":
@@ -60,6 +68,9 @@ if __name__ == "__main__":
             exit()
         for dir in dirs:
             remove_tag(os.path.join(CHART_ROOT,dir))
+    elif tag.lower() == "zipall":
+        for dir in dirs:
+            zip_all(dir)
     else:
         print("Are u sure to make tag",tag,"?")
         if not input().lower().startswith("y"):
